@@ -2,6 +2,8 @@ import React, { PureComponent } from "react";
 import styled from "styled-components";
 import { Dimensions, Text } from "react-native";
 import Orientation from "react-native-orientation-locker";
+import ScrollViewBlock from "./scrollView";
+import ScrollImage from "./scrollImage";
 
 export default class HomeScreen extends PureComponent {
   constructor(props) {
@@ -24,7 +26,7 @@ export default class HomeScreen extends PureComponent {
         this.setState({ orientation: orientation });
       });
     });
-    //------------
+    //------
   }
 
   componentWillUnmount() {
@@ -32,15 +34,15 @@ export default class HomeScreen extends PureComponent {
     this._unsubscribe();
   }
 
-
-  render() {
+    render() {
     let {} = this.state;
 
     let { } = this.props;
+
     return (
-      <Container>
-        <Text>home screen</Text>
-      </Container>
+     <Container>
+       <ScrollViewBlock />
+     </Container>
     );
   }
 }
