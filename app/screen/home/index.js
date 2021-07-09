@@ -1,9 +1,14 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, Component } from "react";
 import styled from "styled-components";
-import { Dimensions, Text } from "react-native";
+import {     StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  Image,
+  Dimensions } from "react-native";
 import Orientation from "react-native-orientation-locker";
-import ScrollViewBlock from "./scrollView";
-import ScrollImage from "./scrollImage";
+
+const { width } = Dimensions.get('window');
 
 export default class HomeScreen extends PureComponent {
   constructor(props) {
@@ -34,14 +39,40 @@ export default class HomeScreen extends PureComponent {
     this._unsubscribe();
   }
 
-    render() {
+  render() {
     let {} = this.state;
-
+    
     let { } = this.props;
 
     return (
      <Container>
-       <ScrollViewBlock />
+     <View style={styles.headercontainer}>
+       <ScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        snapToAlignment={"center"}>
+          <Text style={styles.storyicon1}> Welcome to React Native</Text>
+          <Text style={styles.storyicon2}> Welcome to React Native</Text>
+          <Text style={styles.storyicon1}> Welcome to React Native</Text>
+        </ScrollView>
+      </View>
+      <View>
+        <ScrollView showsVerticalScrollIndicator={false}
+        decelerationRate={0}
+        snapToInterval={width - 10}
+        snapToAlignment={"center"}>
+          <Text style={styles.posticon}>Welcome to React Native</Text>
+          <Text style={styles.posticon}>Welcome to React Native</Text>
+          <Text style={styles.posticon}>Welcome to React Native</Text>
+          <Text style={styles.posticon}>Welcome to React Native</Text>
+          <Text style={styles.posticon}>Welcome to React Native</Text>
+          <Text style={styles.posticon}>Welcome to React Native</Text>
+          <Text style={styles.posticon}>Welcome to React Native</Text>
+          <Text style={styles.posticon}>Welcome to React Native</Text>
+          <Text style={styles.posticon}>Welcome to React Native</Text>
+          <Text style={styles.posticon}>Welcome to React Native</Text>
+        </ScrollView>
+      </View>
      </Container>
     );
   }
@@ -51,4 +82,34 @@ export default class HomeScreen extends PureComponent {
 //region ====================== Styles ========================================
 const Container = styled.SafeAreaView`
   flex: 1
+  backgroundColor: lightgrey
 `;
+
+
+const styles = StyleSheet.create({
+  headercontainer: {
+    flex: 2,
+    flexDirection:'column',
+  },
+  storyicon1: {
+    flex: 1,
+    width: 120,
+    height: 50,
+    flexBasis: 60,
+    backgroundColor:'powderblue'
+  },
+  storyicon2: {
+    width: 120,
+    height: 50,
+    backgroundColor:'skyblue'
+  },
+  posticon: {
+    flex: 2,
+    margin: 20,
+    backgroundColor: 'silver',
+    margin: 10,
+    textAlign: 'center',
+    fontSize: 20,
+    paddingTop: 70,
+  }
+});
