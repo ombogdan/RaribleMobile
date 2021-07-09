@@ -5,7 +5,7 @@ import { View, StyleSheet, ScrollView, Dimensions } from 'react-native';
 const { width } = Dimensions.get('window');
 
 export default class scrollViewBlock extends Component {
-  
+  //
   componentDidMount() {
       setTimeout(() => {this.scrollView.scrollTo({x: -30}) }, 1) // scroll view position fix
    }
