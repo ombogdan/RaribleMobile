@@ -1,11 +1,6 @@
-import React, { PureComponent, Component } from "react";
+import React, { PureComponent } from "react";
 import styled from "styled-components";
-import {     StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  Image,
-  Dimensions } from "react-native";
+import { View, Dimensions, Text, ScrollView, StyleSheet } from "react-native";
 import Orientation from "react-native-orientation-locker";
 
 const { width } = Dimensions.get('window');
@@ -31,7 +26,8 @@ export default class HomeScreen extends PureComponent {
         this.setState({ orientation: orientation });
       });
     });
-    //------
+    //------------
+
   }
 
   componentWillUnmount() {
@@ -39,41 +35,40 @@ export default class HomeScreen extends PureComponent {
     this._unsubscribe();
   }
 
+
   render() {
     let {} = this.state;
-    
+   
     let { } = this.props;
-
     return (
-     <Container>
-     <View style={styles.headercontainer}>
-       <ScrollView
-        horizontal={true}
-        showsHorizontalScrollIndicator={false}
-        snapToAlignment={"center"}>
-          <Text style={styles.storyicon1}> Welcome to React Native</Text>
-          <Text style={styles.storyicon2}> Welcome to React Native</Text>
-          <Text style={styles.storyicon1}> Welcome to React Native</Text>
+      <Container>
+        <ScrollView
+            horizontal={true}
+            pagingEnabled={true}
+            showHorizontalScrollIndicator={false}
+            decelerationRate='fast'
+            contentContainerStyle={{FlexDirection : 'row',
+            justifyContent : 'flex-start', 
+            height: '99%'}}>
+              <View style={styles.scrollViewContainer1}></View>
+              <View style={styles.scrollViewContainer2}></View>
+              <View style={styles.scrollViewContainer1}></View>
+              <View style={styles.scrollViewContainer2}></View>
+              <View style={styles.scrollViewContainer1}></View>
+              <View style={styles.scrollViewContainer2}></View>
         </ScrollView>
-      </View>
-      <View>
-        <ScrollView showsVerticalScrollIndicator={false}
-        decelerationRate={0}
-        snapToInterval={width - 10}
-        snapToAlignment={"center"}>
-          <Text style={styles.posticon}>Welcome to React Native</Text>
-          <Text style={styles.posticon}>Welcome to React Native</Text>
-          <Text style={styles.posticon}>Welcome to React Native</Text>
-          <Text style={styles.posticon}>Welcome to React Native</Text>
-          <Text style={styles.posticon}>Welcome to React Native</Text>
-          <Text style={styles.posticon}>Welcome to React Native</Text>
-          <Text style={styles.posticon}>Welcome to React Native</Text>
-          <Text style={styles.posticon}>Welcome to React Native</Text>
-          <Text style={styles.posticon}>Welcome to React Native</Text>
-          <Text style={styles.posticon}>Welcome to React Native</Text>
+        <ScrollView horizontal={false}
+            contentContainerStyle={{flexDirection : 'column',
+            justifyContent : 'center',
+            width: '100%'}}>
+              <View style={styles.scrollViewContainer3}></View>
+              <View style={styles.scrollViewContainer4}></View>
+              <View style={styles.scrollViewContainer3}></View>
+              <View style={styles.scrollViewContainer4}></View>
+              <View style={styles.scrollViewContainer3}></View>
+              <View style={styles.scrollViewContainer4}></View>
         </ScrollView>
-      </View>
-     </Container>
+      </Container>
     );
   }
 }
@@ -82,34 +77,36 @@ export default class HomeScreen extends PureComponent {
 //region ====================== Styles ========================================
 const Container = styled.SafeAreaView`
   flex: 1
-  backgroundColor: lightgrey
+
+  backgroundColor: gray
+
 `;
-
-
 const styles = StyleSheet.create({
-  headercontainer: {
-    flex: 2,
-    flexDirection:'column',
+  scrollView: {
+    height : Dimensions.get('window').height,
+  }, 
+  scrollViewContainer1: { 
+    height: 200,
+    width: 200,
+    backgroundColor: "silver",
+    borderRadius: 10
   },
-  storyicon1: {
-    flex: 1,
-    width: 120,
-    height: 50,
-    flexBasis: 60,
-    backgroundColor:'powderblue'
+  scrollViewContainer2: { 
+    height: 200,
+    width: 200,
+    backgroundColor: "gray",
+    borderRadius: 10
   },
-  storyicon2: {
-    width: 120,
-    height: 50,
-    backgroundColor:'skyblue'
+  scrollViewContainer3: {
+    height: 400,
+    backgroundColor: "white",
+    borderRadius: 10,
+    padding: 10
   },
-  posticon: {
-    flex: 2,
-    margin: 20,
-    backgroundColor: 'silver',
-    margin: 10,
-    textAlign: 'center',
-    fontSize: 20,
-    paddingTop: 70,
-  }
-});
+  scrollViewContainer4: {
+    height: 400,
+    backgroundColor: "black",
+    borderRadius: 10,
+    padding: 10
+  }, 
+  })
