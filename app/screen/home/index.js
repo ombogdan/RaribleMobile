@@ -2,7 +2,8 @@ import React, {PureComponent} from "react";
 import styled from "styled-components";
 import {View, Dimensions, Text, ScrollView, StyleSheet, Image, TouchableOpacity} from "react-native";
 import Orientation from "react-native-orientation-locker";
-import { Avatar } from 'react-native-elements';
+
+
 const {width} = Dimensions.get('window');
 
 export default class HomeScreen extends PureComponent {
@@ -48,20 +49,29 @@ export default class HomeScreen extends PureComponent {
                     flexDirection: 'row',
                     justifyContent: 'flex-start',
                 }}>
-                <View style={styles.view}
-                    <View style={{  alignItems: 'center',  }} >
-                        <Text>Top Sellers</Text>
-                         <Avatar
-                          size={96}
-                          rounded
-                          source={{ uri:  'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg' }}
-                          containerStyle={styles.avatarContainer}>
-                        <Avatar.Accessory
-                            name="pencil-alt"
-                            type="font-awesome-5"
-                            size={16}
+                <View style={styles.view}>
+                    <Text style={{fontSize: 7, marginTop: 10, marginLeft: 10}}>Top Sellers</Text>
+                    <View style={styles.container}>
+                        <Image  source={{"uri": 'https://www.w3schools.com/html/pulpitrock.jpg'}} style={{
+                                margin: 10,
+                              height: 40, // change these values according to your requirement.
+                              width: 40,
+                              borderRadius: 20,
+                            }}
                         />
-                    </Avatar>
+                        <Text>User Name</Text>
+                    </View>
+                    <Text style={{fontSize: 7, marginTop: 10, marginLeft: 10}}>Top byers</Text>
+                    <View style={styles.container}>
+                        <Image  source={{"uri": 'https://www.w3schools.com/html/pulpitrock.jpg'}} style={{
+                            margin: 10,
+                            height: 40, // change these values according to your requirement.
+                            width: 40,
+                            borderRadius: 20,
+                        }}
+                        />
+                        <Text>User Name</Text>
+                    </View>
                 </View>
                 <View style={styles.view1}></View>
                 <View style={styles.view1}></View>
@@ -98,13 +108,20 @@ const Container = styled.SafeAreaView`
 const styles = StyleSheet.create({
     scrollView: {
         height: Dimensions.get('window').height,
+        margin: 3
     },
     view: {
-        flexDirection: "row",
+        flexDirection: "column",
+        margin: 5,
         height: 200,
         width: 200,
         backgroundColor: "silver",
         borderRadius: 10
+    },
+    container: {
+        justifyContent: 'flex-start',
+        flexDirection:'row',
+        alignItems:'center'
     },
     view1: {
         height: 200,
