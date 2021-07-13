@@ -1,23 +1,23 @@
-import React, { Component } from 'react';
-import { Text, View, Image } from 'react-native';
+import React, { Component } from "react";
+import { Text, View, Image } from "react-native";
 
 export default class StoryIcon extends Component {
   render() {
+    let {userdp} = this.props;
     return (
       <View
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
           paddingLeft: 6,
-          paddingRight: 6
+          paddingRight: 6,
         }}
       >
         <Image
-          style={{ width: 55, height: 55, borderRadius: '50%' }}
+          style={{ width: 55, height: 55, borderRadius: "50%" }}
           source={{
-            uri: this.props.userdp
+            uri: userdp,
           }}
         />
         <Text>{this.props.username}</Text>
