@@ -45,7 +45,7 @@ export default class HomeScreen extends PureComponent {
         let {} = this.props;
         return (
             <Container>
-                <HeaderScroll />
+                <HeaderScroll/>
                 <ScrollView
                     contentContainerStyle={{
                         flexDirection: "column",
