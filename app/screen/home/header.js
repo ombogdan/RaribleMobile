@@ -41,7 +41,7 @@ class HeaderScroll extends Component {
                 <View style={styles.view1}>
                     <Image source={{"uri": "https://www.w3schools.com/html/pulpitrock.jpg"}}
                            style={{
-                               height: CARD_HEIGHT,
+                               height: 145,
                                width: OTHERCARD_WIDTH,
                                borderRadius: 18,
                            }}/>
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         marginTop: 20,
         marginBottom: 20,
-        height: CARD_HEIGHT,
+        height: 145,
         width: FIRSTCARD_WIDTH,
         backgroundColor: "silver",
         borderBottomLeftRadius: 10,
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         marginLeft: 8,
         marginTop: 20,
-        height: CARD_HEIGHT,
+        height: 145,
         width: OTHERCARD_WIDTH,
         backgroundColor: "silver",
         borderRadius: 10,
