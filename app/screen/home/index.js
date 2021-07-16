@@ -46,14 +46,25 @@ export default class HomeScreen extends PureComponent {
         return (
             <Container>
                 <HeaderScroll/>
+                <View></View>
                 <ScrollView
                     contentContainerStyle={{
                         flexDirection: "column",
-                        justifyContent: "flex-start",
+                        justifyContent: "center",
                         alignItems: 'center',
                         paddingTop: 2,
                     }}>
-                    <View style={styles.item}></View>
+                    <View style={styles.item}>
+                        <View style={styles.cardHeader}>
+                            <Image source={{"uri": "https://www.w3schools.com/html/pulpitrock.jpg"}} style={{
+                                height: 36, // change these values according to your requirement.
+                                width: 36,
+                                borderRadius: 18,
+                            }}
+                            />
+                            <Text style={{marginLeft: 10}}>User Name</Text>
+                        </View>
+                    </View>
                     <View style={styles.item}></View>
                     <View style={styles.item}></View>
                     <View style={styles.item}></View>
@@ -73,11 +84,18 @@ const Container = styled.SafeAreaView`
 const styles = StyleSheet.create({
     item: {
         flex: 1,
+        top: 200,
         height: 400,
         width: '100%',
         backgroundColor: "gray",
         borderRadius: 10,
-        padding: 10,
-
+        borderWidth: 1,
+    },
+    cardHeader: {
+        justifyContent: "space-between",
+        flexDirection: "row",
+        alignItems: "center",
+        height: 40,
+        backgroundColor: 'silver',
     },
 });

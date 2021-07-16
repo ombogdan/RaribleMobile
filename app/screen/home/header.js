@@ -88,21 +88,26 @@ export default HeaderScroll
 const styles = StyleSheet.create({
     view: {
         flexDirection: "column",
-        marginLeft: 10,
         marginTop: 20,
+        marginBottom: 20,
         height: CARD_HEIGHT,
         width: FIRSTCARD_WIDTH,
         backgroundColor: "silver",
-        borderRadius: 10,
+        borderBottomLeftRadius: 10,
+        borderBottomRightRadius: 10,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
+        borderWidth: 1,
         flex: 1,
+
     },
     container: {
         justifyContent: "flex-start",
         flexDirection: "row",
         alignItems: "center",
         height: 40,
-        marginLeft: 8,
-        marginTop: 8,
+        marginLeft: 10,
+        marginTop: 5,
     },
 
     view1: {
