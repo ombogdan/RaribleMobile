@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
     item: {
         flex: 1,
         top: 200,
+
         height: 400,
         width: '100%',
         backgroundColor: "gray",
