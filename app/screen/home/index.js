@@ -1,12 +1,12 @@
-import React, { PureComponent } from "react";
+import React, {PureComponent} from "react";
 import styled from "styled-components";
-import { View, Dimensions, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from "react-native";
+import {View, Dimensions, Text, ScrollView, StyleSheet, Image, TouchableOpacity} from "react-native";
 import Orientation from "react-native-orientation-locker";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import HeaderScroll from "./header.js";
 import ContentScroll from "./card.js"
 
-const CARD_HEIGHT = Dimensions.get("window").height * 0.3;
+const CARD_HEIGHT = Dimensions.get('window').height * 0.3;
 const POST_WIDTH = Dimensions.get("window").width;
 
 
@@ -32,6 +32,19 @@ export default class HomeScreen extends PureComponent {
             });
         });
         //------------
+  async componentDidMount() {
+    console.log("Mount in agroOperation Screen");
+    //Orientation
+    Orientation.unlockAllOrientations();
+    Orientation.getOrientation(orientation => {
+      this.setState({ orientation: orientation });
+    });
+    Dimensions.addEventListener("change", () => {
+      Orientation.getOrientation(orientation => {
+        this.setState({ orientation: orientation });
+      });
+    });
+    //------------
 
     }
 

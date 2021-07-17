@@ -17,7 +17,7 @@ class HeaderScroll extends Component {
                     justifyContent: "flex-start",
                 }}>
                 <View style={styles.view}>
-                    <Text style={{fontSize: 7, marginTop: 10, marginLeft: 10, color: 'silver'}}>Top Sellers</Text>
+                    <Text style={{fontSize: 7, marginTop: 10, marginLeft: 10}}>Top Sellers</Text>
                     <View style={styles.container}>
                         <Image source={{"uri": "https://www.w3schools.com/html/pulpitrock.jpg"}} style={{
                             height: 36, // change these values according to your requirement.
@@ -25,12 +25,9 @@ class HeaderScroll extends Component {
                             borderRadius: 18,
                         }}
                         />
-                        <View>
-                            <Text style={{marginLeft: 10}}>User Name</Text>
-                            <Text style={{fontSize: 8, marginLeft: 10, color: 'silver'}}>price</Text>
-                        </View>
+                        <Text style={{marginLeft: 10}}>User Name</Text>
                     </View>
-                    <Text style={{fontSize: 7, marginTop: 10, marginLeft: 10, color: 'silver'}}>Top byers</Text>
+                    <Text style={{fontSize: 7, marginTop: 10, marginLeft: 10}}>Top byers</Text>
                     <View style={styles.container}>
                         <Image source={{"uri": "https://www.w3schools.com/html/pulpitrock.jpg"}} style={{
                             height: 36, // change these values according to your requirement.
@@ -38,15 +35,11 @@ class HeaderScroll extends Component {
                             borderRadius: 18,
                         }}
                         />
-                        <View>
-                            <Text style={{marginLeft: 10}}>User Name</Text>
-                            <Text style={{fontSize: 8, marginLeft: 10, color: 'silver'}}>price</Text>
-                        </View>
+                        <Text style={{marginLeft: 10}}>User Name</Text>
                     </View>
                 </View>
                 <View style={styles.view1}>
                     <View style={{
-                        height: 145,
                         width: OTHERCARD_WIDTH,
                         borderRadius: 10,
                         backgroundColor: 'black',
@@ -99,7 +92,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         marginTop: 20,
         marginBottom: 20,
-        height: 145,
+        height: CARD_HEIGHT,
         width: FIRSTCARD_WIDTH,
         backgroundColor: "silver",
         borderBottomLeftRadius: 10,
@@ -123,7 +116,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         marginLeft: 8,
         marginTop: 20,
-        height: 145,
+        height: CARD_HEIGHT,
         width: OTHERCARD_WIDTH,
         backgroundColor: "silver",
         borderRadius: 10,
