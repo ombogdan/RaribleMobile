@@ -1,10 +1,12 @@
-import React, {PureComponent} from "react";
+import React, { PureComponent } from "react";
 import styled from "styled-components";
-import {View, Dimensions, Text, ScrollView, StyleSheet, Image, TouchableOpacity} from "react-native";
+import { View, Dimensions, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Orientation from "react-native-orientation-locker";
-import HeaderScroll from './header.js'
+import Icon from 'react-native-vector-icons/FontAwesome';
+import HeaderScroll from "./header.js";
+import ContentScroll from "./card.js"
 
-const CARD_HEIGHT = Dimensions.get('window').height * 0.3;
+const CARD_HEIGHT = Dimensions.get("window").height * 0.3;
 const POST_WIDTH = Dimensions.get("window").width;
 
 
@@ -22,11 +24,11 @@ export default class HomeScreen extends PureComponent {
         //Orientation
         Orientation.unlockAllOrientations();
         Orientation.getOrientation(orientation => {
-            this.setState({orientation: orientation});
+            this.setState({ orientation: orientation });
         });
         Dimensions.addEventListener("change", () => {
             Orientation.getOrientation(orientation => {
-                this.setState({orientation: orientation});
+                this.setState({ orientation: orientation });
             });
         });
         //------------
@@ -45,31 +47,13 @@ export default class HomeScreen extends PureComponent {
         let {} = this.props;
         return (
             <Container>
-                <HeaderScroll/>
-                <View></View>
-                <ScrollView
-                    contentContainerStyle={{
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: 'center',
-                        paddingTop: 2,
-                    }}>
-                    <View style={styles.item}>
-                        <View style={styles.cardHeader}>
-                            <Image source={{"uri": "https://www.w3schools.com/html/pulpitrock.jpg"}} style={{
-                                height: 36, // change these values according to your requirement.
-                                width: 36,
-                                borderRadius: 18,
-                            }}
-                            />
-                            <Text style={{marginLeft: 10}}>User Name</Text>
-                        </View>
-                    </View>
-                    <View style={styles.item}></View>
-                    <View style={styles.item}></View>
-                    <View style={styles.item}></View>
-                    <View style={styles.item}></View>
-                </ScrollView>
+                {/*кароч це треба в вю опернуть бо нижній контент небачить його висоти в налазить на гору*/}
+                <View style={{ height: 170 }}>
+                    <HeaderScroll />
+                </View>
+                <View style={{ height: 400 }}>
+                    <ContentScroll />
+                </View>
             </Container>
         );
     }
@@ -79,15 +63,12 @@ export default class HomeScreen extends PureComponent {
 //region ====================== Styles ========================================
 const Container = styled.SafeAreaView`
   flex: 1;
-  backgroundColor: black
+  background-color: #212121;
 `;
 const styles = StyleSheet.create({
     item: {
-        flex: 1,
-        top: 200,
-
-        height: 400,
-        width: '100%',
+        height: 200,
+        width: "100%",
         backgroundColor: "gray",
         borderRadius: 10,
         borderWidth: 1,
@@ -97,6 +78,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         height: 40,
-        backgroundColor: 'silver',
+        backgroundColor: "silver",
     },
 });

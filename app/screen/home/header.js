@@ -17,7 +17,7 @@ class HeaderScroll extends Component {
                     justifyContent: "flex-start",
                 }}>
                 <View style={styles.view}>
-                    <Text style={{fontSize: 7, marginTop: 10, marginLeft: 10}}>Top Sellers</Text>
+                    <Text style={{fontSize: 7, marginTop: 10, marginLeft: 10, color: 'silver'}}>Top Sellers</Text>
                     <View style={styles.container}>
                         <Image source={{"uri": "https://www.w3schools.com/html/pulpitrock.jpg"}} style={{
                             height: 36, // change these values according to your requirement.
@@ -25,9 +25,12 @@ class HeaderScroll extends Component {
                             borderRadius: 18,
                         }}
                         />
-                        <Text style={{marginLeft: 10}}>User Name</Text>
+                        <View>
+                            <Text style={{marginLeft: 10}}>User Name</Text>
+                            <Text style={{fontSize: 8, marginLeft: 10, color: 'silver'}}>price</Text>
+                        </View>
                     </View>
-                    <Text style={{fontSize: 7, marginTop: 10, marginLeft: 10}}>Top byers</Text>
+                    <Text style={{fontSize: 7, marginTop: 10, marginLeft: 10, color: 'silver'}}>Top byers</Text>
                     <View style={styles.container}>
                         <Image source={{"uri": "https://www.w3schools.com/html/pulpitrock.jpg"}} style={{
                             height: 36, // change these values according to your requirement.
@@ -35,16 +38,22 @@ class HeaderScroll extends Component {
                             borderRadius: 18,
                         }}
                         />
-                        <Text style={{marginLeft: 10}}>User Name</Text>
+                        <View>
+                            <Text style={{marginLeft: 10}}>User Name</Text>
+                            <Text style={{fontSize: 8, marginLeft: 10, color: 'silver'}}>price</Text>
+                        </View>
                     </View>
                 </View>
                 <View style={styles.view1}>
-                    <Image source={{"uri": "https://www.w3schools.com/html/pulpitrock.jpg"}}
-                           style={{
-                               height: CARD_HEIGHT,
-                               width: OTHERCARD_WIDTH,
-                               borderRadius: 18,
-                           }}/>
+                    <View style={{
+                        height: 145,
+                        width: OTHERCARD_WIDTH,
+                        borderRadius: 10,
+                        backgroundColor: 'black',
+                    }}>
+                        <Text style={{fontSize: 14, marginTop: 10, marginLeft: 10}}>New World</Text>
+                        <Text style={{fontSize: 7, marginLeft: 10, color: 'silver'}}>By FPSS</Text>
+                    </View>
                 </View>
                 <View style={styles.view1}>
                     <Image source={{"uri": "https://www.w3schools.com/html/pulpitrock.jpg"}}
@@ -90,7 +99,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         marginTop: 20,
         marginBottom: 20,
-        height: CARD_HEIGHT,
+        height: 145,
         width: FIRSTCARD_WIDTH,
         backgroundColor: "silver",
         borderBottomLeftRadius: 10,
@@ -114,7 +123,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         marginLeft: 8,
         marginTop: 20,
-        height: CARD_HEIGHT,
+        height: 145,
         width: OTHERCARD_WIDTH,
         backgroundColor: "silver",
         borderRadius: 10,
