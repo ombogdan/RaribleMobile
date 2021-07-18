@@ -24,27 +24,15 @@ export default class HomeScreen extends PureComponent {
         //Orientation
         Orientation.unlockAllOrientations();
         Orientation.getOrientation(orientation => {
-            this.setState({ orientation: orientation });
+            this.setState({orientation: orientation});
         });
         Dimensions.addEventListener("change", () => {
             Orientation.getOrientation(orientation => {
-                this.setState({ orientation: orientation });
+                this.setState({orientation: orientation});
             });
         });
         //------------
-  async componentDidMount() {
-    console.log("Mount in agroOperation Screen");
-    //Orientation
-    Orientation.unlockAllOrientations();
-    Orientation.getOrientation(orientation => {
-      this.setState({ orientation: orientation });
-    });
-    Dimensions.addEventListener("change", () => {
-      Orientation.getOrientation(orientation => {
-        this.setState({ orientation: orientation });
-      });
-    });
-    //------------
+
 
     }
 
@@ -61,12 +49,20 @@ export default class HomeScreen extends PureComponent {
         return (
             <Container>
                 {/*кароч це треба в вю опернуть бо нижній контент небачить його висоти в налазить на гору*/}
-                <View style={{ height: 170 }}>
-                    <HeaderScroll />
+                <View style={{height: 170, borderWidth: 1}}>
+                    <HeaderScroll/>
                 </View>
-                <View style={{ height: 400 }}>
-                    <ContentScroll />
+                <ScrollView>
+                <View style={{height: 500, borderBottomWidthWidth: 1, }}>
+                    <ContentScroll/>
                 </View>
+                <View style={{height: 500, borderBottomWidthWidth: 1}}>
+                    <ContentScroll/>
+                </View>
+                <View style={{height: 500, borderBottomWidthWidth: 1}}>
+                    <ContentScroll/>
+                </View>
+                </ScrollView>
             </Container>
         );
     }
