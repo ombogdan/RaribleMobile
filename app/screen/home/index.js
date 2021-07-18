@@ -1,14 +1,9 @@
 import React, {PureComponent} from "react";
 import styled from "styled-components";
-import {View, Dimensions, Text, ScrollView, StyleSheet, Image, TouchableOpacity} from "react-native";
+import {View, Dimensions, ScrollView, StyleSheet} from "react-native";
 import Orientation from "react-native-orientation-locker";
-import Icon from 'react-native-vector-icons/FontAwesome';
 import HeaderScroll from "./header.js";
 import ContentScroll from "./card.js"
-
-const CARD_HEIGHT = Dimensions.get('window').height * 0.3;
-const POST_WIDTH = Dimensions.get("window").width;
-
 
 export default class HomeScreen extends PureComponent {
     constructor(props) {
@@ -53,15 +48,15 @@ export default class HomeScreen extends PureComponent {
                     <HeaderScroll/>
                 </View>
                 <ScrollView>
-                <View style={{height: 500, borderBottomWidthWidth: 1, }}>
-                    <ContentScroll/>
-                </View>
-                <View style={{height: 500, borderBottomWidthWidth: 1}}>
-                    <ContentScroll/>
-                </View>
-                <View style={{height: 500, borderBottomWidthWidth: 1}}>
-                    <ContentScroll/>
-                </View>
+                    <View style={{height: 500, borderBottomWidthWidth: 1,}}>
+                        <ContentScroll/>
+                    </View>
+                    <View style={{height: 500, borderBottomWidthWidth: 1}}>
+                        <ContentScroll/>
+                    </View>
+                    <View style={{height: 500, borderBottomWidthWidth: 1}}>
+                        <ContentScroll/>
+                    </View>
                 </ScrollView>
             </Container>
         );
@@ -74,19 +69,4 @@ const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #212121;
 `;
-const styles = StyleSheet.create({
-    item: {
-        height: 200,
-        width: "100%",
-        backgroundColor: "gray",
-        borderRadius: 10,
-        borderWidth: 1,
-    },
-    cardHeader: {
-        justifyContent: "space-between",
-        flexDirection: "row",
-        alignItems: "center",
-        height: 40,
-        backgroundColor: "silver",
-    },
-});
+
