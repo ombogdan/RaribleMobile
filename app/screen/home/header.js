@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         marginTop: 5,
         marginBottom: 5,
-        height: CARD_HEIGHT,
         width: FIRSTCARD_WIDTH,
         backgroundColor: 'silver',
         borderBottomLeftRadius: 10,

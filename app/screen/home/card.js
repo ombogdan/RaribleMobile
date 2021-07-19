@@ -7,7 +7,7 @@ class ContentScroll extends Component {
 
     render() {
         return (
-            <Card>
+            <Card style={{padding: 10}}>
                 <Card.Title left={(props: any) => (
                     <Avatar.Image size={18} {...props} onPress={() => {
                     }} source={{"uri": "https://www.w3schools.com/html/pulpitrock.jpg"}}

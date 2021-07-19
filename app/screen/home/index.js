@@ -43,12 +43,11 @@ export default class HomeScreen extends PureComponent {
         let {} = this.props;
         return (
             <Container>
-                {/*кароч це треба в вю опернуть бо нижній контент небачить його висоти в налазить на гору*/}
                 <View style={{height: 170, borderWidth: 1}}>
                     <HeaderScroll/>
                 </View>
-                <ScrollView>
-                    <View style={{height: 500, borderBottomWidthWidth: 1,}}>
+                <ScrollView style={{borderTopEndRadius: 10, borderTopStartRadius: 10}}>
+                    <View style={{height: 500, borderBottomWidthWidth: 1}}>
                         <ContentScroll/>
                     </View>
                     <View style={{height: 500, borderBottomWidthWidth: 1}}>
