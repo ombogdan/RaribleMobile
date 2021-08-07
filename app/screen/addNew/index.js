@@ -6,6 +6,7 @@ import Orientation from "react-native-orientation-locker";
 export default class AddNewScreen extends PureComponent {
   constructor(props) {
     super(props);
+    console.log(props)
     this.state = {};
   }
 

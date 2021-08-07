@@ -9,4 +9,6 @@ export default {
     aboutMe: 'About me',
     mySales: 'My sales',
     myPurchases: 'My purchases',
+    city: 'City',
+
 }

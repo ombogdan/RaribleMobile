@@ -16,6 +16,8 @@ target 'RaribleMobile' do
 
   pod 'react-native-viewpager', :path => '../node_modules/@react-native-community/viewpager'
 
+  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+
   target 'RaribleMobileTests' do
     inherit! :complete
     # Pods for testing

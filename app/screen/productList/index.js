@@ -2,14 +2,15 @@ import React, { PureComponent } from "react";
 import styled from "styled-components";
 import { Dimensions, Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import Orientation from "react-native-orientation-locker";
-import AntDesign from "react-native-vector-icons/AntDesign";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-export default class HomeScreen extends PureComponent {
+export default class SearchScreen extends PureComponent {
   constructor(props) {
     super(props);
+    console.log(props.route.params);
     this.state = {
-      loginned: false,
+      name: props?.route?.params?.name ?? "",
     };
   }
 
@@ -20,11 +21,11 @@ export default class HomeScreen extends PureComponent {
     console.log("Mount in agroOperation Screen");
     //Orientation
     Orientation.unlockAllOrientations();
-    Orientation.getOrientation(orientation => {
+    Orientation.getOrientation((orientation) => {
       this.setState({ orientation: orientation });
     });
     Dimensions.addEventListener("change", () => {
-      Orientation.getOrientation(orientation => {
+      Orientation.getOrientation((orientation) => {
         this.setState({ orientation: orientation });
       });
     });
@@ -36,114 +37,103 @@ export default class HomeScreen extends PureComponent {
     this._unsubscribe();
   }
 
-  goToList(type) {
-    let { navigation } = this.props;
-    navigation.navigate("ProductList", { name: type });
-
+  goToFilter(){
+    let {navigation} = this.props;
+    navigation.navigate('FilterScreen')
   }
 
 
   render() {
-    let {} = this.props;
+    let { name } = this.state;
+    let { navigation } = this.props;
     return (
       <Container>
-        <View style={{ height: 100, flexDirection: "column", justifyContent: "center", padding: 24 }}>
-          <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-            <Text style={{ fontSize: 20, fontWeight: "bold" }}>Wears For You</Text>
-              <AntDesign name={"search1"} size={28} />
-          </View>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{ top: 10 }}>
-            <View style={{ borderRadius: 17, backgroundColor: "#F2F2F2" }}>
-              <Text style={{ marginLeft: 10, marginRight: 10 }}>Catalog</Text>
-            </View>
-            <View style={{ backgroundColor: "#F2F2F2", marginLeft: 10, borderRadius: 17 }}>
-              <Text style={{ marginLeft: 10, marginRight: 10 }}>Man</Text>
-            </View>
-            <View style={{ backgroundColor: "#F2F2F2", marginLeft: 10, borderRadius: 17 }}>
-              <Text style={{ marginLeft: 10, marginRight: 10 }}>Woman</Text>
-            </View>
-            <View style={{ backgroundColor: "#F2F2F2", marginLeft: 10, borderRadius: 17 }}>
-              <Text style={{ marginLeft: 10, marginRight: 10 }}>Children</Text>
-            </View>
-            <View style={{ backgroundColor: "#F2F2F2", marginLeft: 10, borderRadius: 17 }}>
-              <Text style={{ marginLeft: 10, marginRight: 10 }}>Beauty</Text>
-            </View>
-          </ScrollView>
+        <View style={{
+          height: 60,
+          justifyContent: "space-between",
+          flexDirection: "row",
+          paddingLeft: 24,
+          alignItems: "center",
+        }}>
+          <TouchableOpacity onPress={() => {
+            navigation.goBack();
+          }}>
+            <MaterialIcons name={"arrow-back-ios"} size={28} />
+          </TouchableOpacity>
+          <Text style={{ right: 24, fontSize: 20, fontWeight: "bold" }}>{name}</Text>
+          <Text/>
         </View>
 
-        <View style={{ paddingLeft: 24, paddingRight: 24, paddingTop: 10 }}>
-          <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-            <Text style={{ fontSize: 20 }}>VIP</Text>
-            <TouchableOpacity onPress={() => {
-              this.goToList("VIP");
-            }}>
-            <MaterialIcons name={"arrow-forward-ios"} size={28} />
-            </TouchableOpacity>
+        <ScrollView>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
+            <View style={{ marginBottom: 10, margin: 10 }}>
+              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
+              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
+              <Text style={{ fontSize: 16 }}>T-shirt</Text>
+            </View>
+            <View style={{ marginBottom: 10, margin: 10 }}>
+              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
+              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
+              <Text style={{ fontSize: 16 }}>T-shirt</Text>
+            </View>
+            <View style={{ marginBottom: 10, margin: 10 }}>
+              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
+              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
+              <Text style={{ fontSize: 16 }}>T-shirt</Text>
+            </View>
+            <View style={{ marginBottom: 10, margin: 10 }}>
+              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
+              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
+              <Text style={{ fontSize: 16 }}>T-shirt</Text>
+            </View>
+            <View style={{ marginBottom: 10, margin: 10 }}>
+              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
+              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
+              <Text style={{ fontSize: 16 }}>T-shirt</Text>
+            </View>
+            <View style={{ marginBottom: 10, margin: 10 }}>
+              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
+              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
+              <Text style={{ fontSize: 16 }}>T-shirt</Text>
+            </View>
+            <View style={{ marginBottom: 10, margin: 10 }}>
+              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
+              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
+              <Text style={{ fontSize: 16 }}>T-shirt</Text>
+            </View>
+            <View style={{ marginBottom: 10, margin: 10 }}>
+              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
+              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
+              <Text style={{ fontSize: 16 }}>T-shirt</Text>
+            </View>
           </View>
-          <ScrollView horizontal={true}>
-            <View style={{ marginBottom: 10, margin: 10 }}>
-              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
-              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
-              <Text style={{ fontSize: 16 }}>T-shirt</Text>
-            </View>
-            <View style={{ marginBottom: 10, margin: 10 }}>
-              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
-              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
-              <Text style={{ fontSize: 16 }}>T-shirt</Text>
-            </View>
-            <View style={{ marginBottom: 10, margin: 10 }}>
-              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
-              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
-              <Text style={{ fontSize: 16 }}>T-shirt</Text>
-            </View>
-            <View style={{ marginBottom: 10, margin: 10 }}>
-              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
-              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
-              <Text style={{ fontSize: 16 }}>T-shirt</Text>
-            </View>
-          </ScrollView>
-        </View>
+          <View style={{ height: 120 }} />
+        </ScrollView>
+        <TouchableOpacity onPress={()=>{
+          this.goToFilter();
+        }} style={{
+          position: "absolute",
+          height: 34,
+          width: 84,
+          bottom: 80,
+          left: Dimensions.get("screen").width * 0.4,
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#ffffff",
+          borderRadius: 4,
+        }}>
+          <MaterialCommunityIcons name={"filter-variant"} size={30} />
+          <Text>Filter</Text>
 
-        <View style={{ paddingLeft: 24, paddingRight: 24, paddingTop: 10 }}>
-          <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-            <Text style={{ fontSize: 20 }}>Free</Text>
-            <TouchableOpacity onPress={() => {
-              this.goToList("Free");
-            }}>
-              <MaterialIcons name={"arrow-forward-ios"} size={28} />
-            </TouchableOpacity>
-          </View>
-          <ScrollView horizontal={true}>
-            <View style={{ marginBottom: 10, margin: 10 }}>
-              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
-              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
-              <Text style={{ fontSize: 16 }}>T-shirt</Text>
-            </View>
-            <View style={{ marginBottom: 10, margin: 10 }}>
-              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
-              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
-              <Text style={{ fontSize: 16 }}>T-shirt</Text>
-            </View>
-            <View style={{ marginBottom: 10, margin: 10 }}>
-              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
-              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
-              <Text style={{ fontSize: 16 }}>T-shirt</Text>
-            </View>
-            <View style={{ marginBottom: 10, margin: 10 }}>
-              <Image source={require("../../assets/test-t-short.png")} style={{ width: 154, height: 145 }} />
-              <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
-              <Text style={{ fontSize: 16 }}>T-shirt</Text>
-            </View>
-          </ScrollView>
-        </View>
+        </TouchableOpacity>
+
       </Container>
     );
   }
 }
 
+
 //region ====================== Styles ========================================
 const Container = styled.SafeAreaView`
-  flex: 1;
-  background-color: white;
 `;
-

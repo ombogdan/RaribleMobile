@@ -7,4 +7,5 @@ export default {
     aboutMe: 'Про мене',
     mySales: 'Мої продажі',
     myPurchases: 'Мої покупки',
+    city: 'Місто',
 }

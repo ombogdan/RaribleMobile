@@ -95,7 +95,6 @@ export default class ProfileScreen extends PureComponent {
                   <Text style={{ fontSize: 16, fontWeight: "bold", marginBottom: 3 }}>24грн</Text>
                   <Text style={{ fontSize: 16 }}>T-shirt</Text>
                 </View>
-
               </View>
             </ScrollView>
           );
