@@ -6,4 +6,7 @@ export default {
     password: 'Password',
     login: 'Login',
     logout: 'Logout',
+    aboutMe: 'About me',
+    mySales: 'My sales',
+    myPurchases: 'My purchases',
 }

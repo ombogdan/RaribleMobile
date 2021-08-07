@@ -4,5 +4,8 @@ export default {
     password: 'Пароль',
     login: 'Войти',
     logout: 'Выйти',
+    aboutMe: 'Обо мне',
+    mySales: 'Мои продажи',
+    myPurchases: 'Мои покупки',
 
 }
