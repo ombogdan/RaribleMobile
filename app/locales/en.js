@@ -1,8 +1,7 @@
 import React from "react";
 
 export default {
-    test : 'test',
-    appName: 'RaribleMobile',
+    appName: 'GoodOnYou',
     username: 'Login',
     password: 'Password',
     login: 'Login',

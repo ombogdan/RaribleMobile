@@ -1,7 +1,8 @@
 export default {
-    appName: 'RaribleMobile',
+    appName: 'WearsForYou',
     username: 'Логин',
     password: 'Пароль',
     login: 'Войти',
     logout: 'Выйти',
+
 }

@@ -1,5 +1,5 @@
 export default {
-    appName: 'RaribleMobile',
+    appName: 'GoodOnYou',
     username: 'Логін',
     password: 'Пароль',
     login: 'Ввійти',
