@@ -13,6 +13,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3428C075ED5F60613F648A7F /* libPods-RaribleMobile-RaribleMobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E326C0023BC123FACF2B5D /* libPods-RaribleMobile-RaribleMobileTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		827ACE0D26FDE51800E43D10 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827ACE0C26FDE51800E43D10 /* File.swift */; };
 		8F6A74EA4DE26ABAD2F226BA /* libPods-RaribleMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B8B35C224D9E4E0B6F4AA8 /* libPods-RaribleMobile.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		78DD263A775A42C4BFF81576 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		7F10C00EB39C48A684F619C7 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RaribleMobile/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		827ACE0C26FDE51800E43D10 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		8300799D3D5A436C8B49ECAE /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		854A2B931A8BBD171E42E9FB /* Pods-RaribleMobile-RaribleMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaribleMobile-RaribleMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-RaribleMobile-RaribleMobileTests/Pods-RaribleMobile-RaribleMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B0FCA86FBE632E727CA5FEC /* Pods-RaribleMobile-RaribleMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaribleMobile-RaribleMobileTests.release.xcconfig"; path = "Target Support Files/Pods-RaribleMobile-RaribleMobileTests/Pods-RaribleMobile-RaribleMobileTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				827ACE0C26FDE51800E43D10 /* File.swift */,
 			);
 			name = RaribleMobile;
 			sourceTree = "<group>";
@@ -240,14 +243,14 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1300;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1300;
 					};
 				};
 			};
@@ -451,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				827ACE0D26FDE51800E43D10 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -690,6 +694,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
